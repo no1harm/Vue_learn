@@ -40,3 +40,9 @@
     + 2.`script`
     + 3.`style` 
         - 可以设置`scoped`属性，让其只在`template`中生效
+
+    + 创建实例
+        - `new Vue({})`
+- 解决bug
+    + `google`
+    + 注意格式
