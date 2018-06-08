@@ -16,16 +16,24 @@
             const webpack = require("webpack");
             module.exports = {
             context: __dirname + "/src",
-            entry: {
+            entry: {    //入口
                 app: "./app.js",
             },
-            output: {
+            output: {   //出口
                 path: __dirname + "/dist",
                 filename: "[name].bundle.js",
             },
             };
             ```
     + 运行`webpack -p` 完成输出(p表示production)
+    + 运行`webpack-dev-server` 开发模式
+
+- 自动执行开发
+    + 在`package.json`中添加
+        - ```javacript
+            "dev":".\\node_modules\\.bin\\webpack-dev-server --inline --hot --open",
+            "build":"webpack" //打包代码到生产环境目录
+            ```
 
 - es6模块
     + `babel`
