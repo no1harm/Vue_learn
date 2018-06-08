@@ -34,6 +34,8 @@
             "dev":".\\node_modules\\.bin\\webpack-dev-server --inline --hot --open",
             "build":"webpack" //打包代码到生产环境目录
             ```
+    + `npm run dev`自动执行
+    + `npm run build`自动打包
 
 - es6模块
     + `babel`
@@ -54,3 +56,12 @@
 - 解决bug
     + `google`
     + 注意格式
+
+- Vue常用指令
+    + `v-text`元素的innerText,只能在双标签中使用
+    + `v-html`元素的innerHTML,不能包含{{}}
+    + `v-if`元素是否移除
+    + `v-show`元素是否显示/隐藏
+    + `v-model`双向数据绑定
+    + `v-bind:`单向数据绑定
+
