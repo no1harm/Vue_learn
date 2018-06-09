@@ -38,7 +38,20 @@
         <hr>
         <div>
             <ul>
-                <li v-for="stu in stus" :class="{'A': 'red','B':'green'}[stu.score]">{{ stu.name }}</li>
+                <li v-for="(stu,index) in stus" :class="{'A': 'red','B':'green'}[stu.score]" :key="index"> {{ stu.name }}
+                    <button @click="del(index)">删除</button>
+                </li>
+            </ul>
+            <button v-on:click="isRed = !isRed">Click Me</button>
+            <button @click="change">Click Me Again</button>
+            <input type="text" name="" v-model="name">
+            <input type="text" name="" v-model="score">
+            <button @click="addStu">ADD STUDENT</button>
+        </div>
+        <hr>
+        <div>
+            <ul>
+                <li></li>
             </ul>
         </div>
 
@@ -49,6 +62,8 @@
 export default {
     data(){
         return {
+            name:'',
+            score:'',
             text:'Here',
             html:`
                 <h1>v-html</h1>
@@ -61,6 +76,29 @@ export default {
                 {name:'Jack',score:'A'},
                 {name:'Jay',score:'B'},
             ]
+        }
+    },
+    //声明函数，属于组件对象
+    methods:{
+        //包含多个函数名做key,函数体做value
+        change(){
+            this.isRed = !this.isRed;
+            this.stus.push(
+                {
+                    name:'mick',score:'A',
+                },
+            )
+        },
+        addStu(){
+            this.stus.push({
+                name:this.name,
+                score:this.score,
+            });
+            this.name='';
+            this.score='';
+        },
+        del(index){
+            this.stus.splice(index,1)
         }
     }
 }

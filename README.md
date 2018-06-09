@@ -64,4 +64,10 @@
     + `v-show`元素是否显示/隐藏
     + `v-model`双向数据绑定
     + `v-bind:`单向数据绑定
+    + `methods`
+    + `v-on：事件名 = "表达式||函数名"`绑定事件的方法 
+    + `v-for`
+        - 可以使用操作数组（item,index）
+        - 可以使用操作对象（value，key，index）
+    
 
