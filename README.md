@@ -49,7 +49,7 @@
     + 1.`template`
     + 2.`script`
     + 3.`style` 
-        - 可以设置`scoped`属性，让其只在`template`中生效
+        - 可以设置`scoped`属性，让其只在当前`template`中生效
 
     + 创建实例
         - `new Vue({})`
@@ -69,5 +69,15 @@
     + `v-for`
         - 可以使用操作数组（item,index）
         - 可以使用操作对象（value，key，index）
-    
-
+- vue组件使用
+    + 父子组件
+        - 父组件中引入子组件`import xx from yy.vue`
+        - 父组件声明组件对象`components:{xx:xx}`
+        - 父组件中`template`中`<xx></xx>`
+    + 全局组件/使用方便，不需要声明
+        - 在`main.js`在中引用一次`import xx from yy.vue`
+        - 使用`vue.components('组件名','组件对象')`
+        - 所有的组件就可以通过组件名直接使用
+    + 父组件传值给子组件
+        - 父组件设定值 `xx='yy'`
+        - 子组件使用`props:['xx']`接收值

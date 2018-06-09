@@ -50,15 +50,25 @@
         </div>
         <hr>
         <div>
-            <ul>
-                <li></li>
-            </ul>
+            This is component
+            <header-vue textone='props value'></header-vue>
+            <body-vue></body-vue>
+            <footer-vue></footer-vue>
         </div>
-
+        <div>
+            This is overall component
+            <overall-vue></overall-vue>
+        </div>
     </div>
 </template>
 
 <script>
+
+//引入子组件
+import headerVue from '../components/header.vue'
+import bodyVue from '../components/body.vue'
+import footerVue from '../components/footer.vue'
+
 export default {
     data(){
         return {
@@ -100,6 +110,12 @@ export default {
         del(index){
             this.stus.splice(index,1)
         }
+    },
+    components:{
+        //组件使用，组件调用
+        headerVue:headerVue,
+        bodyVue:bodyVue,
+        footerVue:footerVue
     }
 }
 </script>
