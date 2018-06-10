@@ -1,14 +1,9 @@
 <template>
     <div>
-        <div>
-            This is overall component
-            <overall-vue texttwo="props value.2"></overall-vue>
-        </div>
-        <div>
-            This is subvue
-            <sub-vue></sub-vue>
-            <button @click="listen">listen</button>
-        </div>
+        Put:
+        <input type="text" name="" v-model="text">
+        <br>
+        Out: {{ text | myFilter }}
     </div>
 </template>
 
@@ -25,20 +20,7 @@ import connect from './connector.js'
 export default {
     data(){
         return {
-            name:'',
-            score:'',
-            text:'Here',
-            html:`
-                <h1>v-html</h1>
-                `,
-            isIf:true,
-            isShow:true,
-            isModel:'This is v-model',
-            isRed:false,
-            stus:[
-                {name:'Jack',score:'A'},
-                {name:'Jay',score:'B'},
-            ]
+           text:'here'
         }
     },
     //声明函数，属于组件对象
@@ -74,6 +56,12 @@ export default {
         headerVue:headerVue,
         bodyVue:bodyVue,
         footerVue:footerVue
+    },
+    //组件内过滤器
+    filters:{
+        myFilter:function(value){
+            return value.split('').reverse().join('')
+        }
     }
 }
 </script>

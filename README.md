@@ -122,6 +122,26 @@
 
 ### vue 过滤器
 
+- 当组件内过滤器命名与全局过滤器命名冲突时，组件内过滤器有效
 - 组件内的过滤器
+    + `options`中的`filter`属性
+        - 多个key就是不同过滤器名，多个value就是与key对应的过滤方式函数体
+        + ```html
+            <div>Out: {{ text | myFilter }}</div>
+            ```
+        + ```javascript
+          filters:{
+              myFilter:function(value){}
+          }
+          ```
 
 - 全局过滤器
+    + `Vue.filter(name,fu)`
+
+### 获取DOM元素
+
+- 和生命周期有关
+
+### mint-ui
+
+### vue-router

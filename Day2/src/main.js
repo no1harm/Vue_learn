@@ -8,6 +8,11 @@ import subVue from '../components/sub.vue'
 Vue.component('overallVue',overallVue)
 Vue.component('subVue',subVue)
 
+//创建全局过滤器
+Vue.filter('myFilter',function(value){
+    return 1
+})
+
 // 创建实例
 new Vue({
     el:'#app',
