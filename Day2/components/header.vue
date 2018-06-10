@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>OverAll {{ texttwo }}</h1>
+        <h1>header {{ textone }}</h1>
     </div>
 </template>
 
@@ -9,12 +9,12 @@ export default {
     data(){
         return
     },
-    props:['texttwo']
+    props:['textone']
 }
 </script>
 
 <style scoped>
 div {
-    background-color:rosybrown;
+    background-color: aquamarine
 }
 </style>
