@@ -1,9 +1,6 @@
 <template>
     <div>
-        Put:
-        <input type="text" name="" v-model="text">
-        <br>
-        Out: {{ text | myFilter }}
+        <router-view></router-view>
     </div>
 </template>
 

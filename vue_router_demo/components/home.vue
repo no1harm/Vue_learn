@@ -1,19 +1,19 @@
 <template>
     <div>
-        <h1>footer</h1>
+        我是主页
     </div>
 </template>
 
 <script>
 export default {
     data(){
-        return {}
+        return{
+
+        }
     }
 }
 </script>
 
-<style scoped>
-div {
-    background-color: blanchedalmond
-}
+<style>
+
 </style>

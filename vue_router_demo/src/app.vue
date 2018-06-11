@@ -1,19 +1,19 @@
 <template>
     <div>
-        <h1>footer</h1>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
 export default {
     data(){
-        return {}
+        return {
+
+        }
     }
 }
 </script>
 
-<style scoped>
-div {
-    background-color: blanchedalmond
-}
+<style>
+
 </style>

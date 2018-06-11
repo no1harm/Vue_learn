@@ -145,3 +145,28 @@
 ### mint-ui
 
 ### vue-router
+
+- 核心插件
+    + `vue-router` 路由
+    + `vuex` 管理全局共享数据
+- 使用方法
+    + `npm i vue-router -S`安装
+    + 在`main.js`中引用`Vue-router`
+        - `import VueRouter from 'vue-router'`
+    + 加载插件 `Vue.use(VueRouter)`
+    + 创建路由对象并配置路由规则
+        - ```javascript
+            const router = new VueRouter({
+                routers:[
+                    { path:'/home',component:Home }        
+                ]
+            });
+            ```
+    + 将其路由对象传递给Vue的实例，在`options`中
+        - `router:router`
+    + 在`app.vue`中预留位置`<router-view></router-view>`
+
+- 问题
+    + `npm run dev`可以运行，但是浏览器F12报错`Uncaught ReferenceError: require is not defined`
+        - `webpack.config.js`中设置`electron:false`
+            + 但是现在把选项删除了又没有影响了，真坑...
