@@ -170,3 +170,37 @@
     + `npm run dev`可以运行，但是浏览器F12报错`Uncaught ReferenceError: require is not defined`
         - `webpack.config.js`中设置`electron:false`
             + 但是现在把选项删除了又没有影响了，真坑...
+
+- router-link
+    + 引入组件
+        - `main.js`中`import xx from '../components/xx.vue'`
+    + 配置路由规则
+        - ```javascript
+            const router = new VueRouter({
+                routers:[
+                    { path:'/xx',component:xx }        
+                ]
+            });
+            ```
+    + 页面中引入
+        - `<router-link to="/xx"</router-link>`
+    + 参数router-link
+        - 在vue-router中，有两大对象呗挂载到了实例this
+            + $route(只读、具备信息的对象)
+            + $router(具备功能函数)
+        - 查询字符串
+            + `where`
+                - `<router-link :to="{name:'page2',query:{id:index}}"><button>Detail</button></router-link>`
+            + `how`
+                - `{ name:'page2', path:'/page2',component:page2 }`
+            + `do what`
+                - `this.$route.query.id`
+        - path方式
+            + `where`
+                - `<router-link :to="{name:'page2',params:{name:1}}"><button>Detail</button></router-link>`
+            + `how`
+                - `{ name:'page2', path:'/page2:name',component:page2 }`
+            + `do what`
+                - `this.$route.params.name`
+
+- 编程导航
