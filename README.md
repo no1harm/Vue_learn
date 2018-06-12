@@ -140,7 +140,10 @@
 
 ### 获取DOM元素
 
-- 和生命周期有关
+- 生命周期钩子
+    + 可参考这篇博文（不是本人所写） `https://segmentfault.com/a/1190000008010666`
+    + `created`:数据的初始化、DOM没有生成
+    + `mounted`:将数据装载到DOM元素上，此时有DOM
 
 ### mint-ui
 
@@ -184,23 +187,58 @@
             ```
     + 页面中引入
         - `<router-link to="/xx"</router-link>`
-    + 参数router-link
-        - 在vue-router中，有两大对象呗挂载到了实例this
-            + $route(只读、具备信息的对象)
-            + $router(具备功能函数)
+    + `router-link`传递参数
+        - 在`vue-router`中，有两大对象呗挂载到了实例`this`
+            + `$route`(只读、具备信息的对象)
+            + `$router`(具备功能函数)
         - 查询字符串
             + `where`
-                - `<router-link :to="{name:'page2',query:{id:index}}"><button>Detail</button></router-link>`
+                - `<router-link :to="{name:'page2',query:{id:index}}"></router-link>`
             + `how`
                 - `{ name:'page2', path:'/page2',component:page2 }`
             + `do what`
                 - `this.$route.query.id`
         - path方式
             + `where`
-                - `<router-link :to="{name:'page2',params:{name:1}}"><button>Detail</button></router-link>`
+                - `<router-link :to="{name:'page2',params:{name:1}}"></router-link>`
             + `how`
                 - `{ name:'page2', path:'/page2:name',component:page2 }`
             + `do what`
                 - `this.$route.params.name`
 
 - 编程导航
+    + `router.go` go方法用于控制`history`记录的前进和后退
+        - ```javascript
+            // 在浏览器记录中前进一步，等同于 history.forward()
+            this.$router.go(1)
+            // 后退一步记录，等同于 history.back()
+            this.$router.go(-1)
+            // 前进 3 步记录router.go(3)
+            // 如果 history 记录不够用，那就默默地失败呗
+            this.$router.go(-100)
+            this.$router.go(100)
+            ```
+- 重定向/404
+    + `{ path:'/',redirect:'/home'}`
+    + `{ path:'*',component:NotFound404}`
+
+- 多视图
+
+- 嵌套路由
+    + 用单页去实现多页应用
+        - 引用组件
+        - ```javascript
+            routes:[
+            // 重定向
+            { path:'/',redirect:'/home'},
+            { name:'home', path:'/home',component:Home },   
+            // 嵌套路由     
+            { name:'page1', path:'/page1',component:page1,children:[
+                {name:'page1_1',path:'page1_1',component:page1_1},
+                {name:'page1_2',path:'page1_2',component:page1_2},
+            ]},        
+            { name:'page2', path:'/page2',component:page2 },        
+            ]
+        ```
+
+### axios

@@ -1,6 +1,6 @@
 <template>
     <div>
-        Home Page
+        Page1-1 page
     </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
 div {
-    height: 460px;
-    background-color: aquamarine;
+    height: 300px;
+    background-color: rgb(77, 156, 201);
 }
 </style>

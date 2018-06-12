@@ -1,6 +1,8 @@
 <template>
     <div>
         Page2
+        <br>
+        <button @click="goBack">Go Back</button>
     </div>
 </template>
 
@@ -9,6 +11,11 @@ export default {
     data(){
         return{
 
+        }
+    },
+    methods:{
+        goBack(){
+            this.$router.go(-1)
         }
     }
 }
