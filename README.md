@@ -218,6 +218,8 @@
             this.$router.go(-100)
             this.$router.go(100)
             ```
+    + 跳到指定路由
+        - `this.$router.push({name:''})`
 - 重定向/404
     + `{ path:'/',redirect:'/home'}`
     + `{ path:'*',component:NotFound404}`
@@ -240,5 +242,21 @@
             { name:'page2', path:'/page2',component:page2 },        
             ]
         ```
+## Day3
 
 ### axios
+
+- 安装
+    + `npm i axios`
+- 引入
+    + `import Axios from 'axios`
+- Vue原型挂载属性
+    + `Vue.prototype.$axios = Axios`
+    
+- `https://www.jianshu.com/p/8e5fb763c3d7`
+
+### 拦截器
+
+- 过滤，在请求和响应中
+    + `axios.interceptors.request.use(fu)` 请求之前
+    + `function(config){ config.headers = { xxx }}`

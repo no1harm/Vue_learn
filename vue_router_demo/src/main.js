@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Axios from 'axios'
 
 //主体
 import App from './app.vue'
@@ -29,6 +30,7 @@ let router = new VueRouter({
         { name:'home', path:'/home',component:Home },   
         // 嵌套路由     
         { name:'page1', path:'/page1',component:page1,children:[
+            //配置子路由
             {name:'page1_1',path:'page1_1',component:page1_1},
             {name:'page1_2',path:'page1_2',component:page1_2},
         ]},        
