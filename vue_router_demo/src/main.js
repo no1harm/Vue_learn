@@ -15,6 +15,7 @@ import page2 from '../components/page2.vue'
 import page1_1 from '../components/page1_1.vue'
 import page1_2 from '../components/page1_2.vue'
 
+Vue.prototype.$axios = Axios
 Vue.component('headerVue',Header)
 Vue.component('footerVue',Footer)
 // 挂载属性

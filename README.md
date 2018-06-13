@@ -252,11 +252,46 @@
     + `import Axios from 'axios`
 - Vue原型挂载属性
     + `Vue.prototype.$axios = Axios`
-    
+
 - `https://www.jianshu.com/p/8e5fb763c3d7`
 
 ### 拦截器
 
 - 过滤，在请求和响应中
-    + `axios.interceptors.request.use(fu)` 请求之前
-    + `function(config){ config.headers = { xxx }}`
+    + 请求之前
+        - `axios.interceptors.request.use(fu)` 
+        - `function(config){ config.headers = { xxx }}`
+    + 响应之后
+        - `axios.interceptors.response.use(fu)` 
+        - `function(config){ config.headers = { xxx }}`
+
+### 计算属性
+- 可以监视多个有相关this属性的值，并返回指定数据
+- ```javascript
+    computed:{
+        totally:function(){
+            return this.peopleNum * this.peoplePri
+        }
+    }
+    ```
+
+
+### watch
++ 对单个变量进行监视
++ 深度监视
++ ```javascript
+    watch:{
+        //普通变量监视
+        peopleNum:function(newVul,oldVul){
+            console.log(newVul,oldVul)
+        },
+        peoplePri:function(newVul,oldVul){
+            console.log(newVul,oldVul)
+        },
+        //深度监视
+        someDeepWatch: {
+        handler: function (val, oldVal) { /* ... */ },
+        deep: true
+        },
+    }
+    ```

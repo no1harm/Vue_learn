@@ -1,6 +1,10 @@
 <template>
     <div>
-        Page1-2 page
+        Peoples : <input type="text" v-model="peopleNum">
+        <br>
+        Price : <input type="text" v-model="peoplePri">
+        <br>
+        Totally : {{ totally }}
     </div>
 </template>
 
@@ -8,7 +12,28 @@
 export default {
     data(){
         return{
-
+            peopleNum:0,
+            peoplePri:0,
+        }
+    },
+    watch:{
+        //普通变量监视
+        peopleNum:function(newVul,oldVul){
+            console.log(newVul,oldVul)
+        },
+        peoplePri:function(newVul,oldVul){
+            console.log(newVul,oldVul)
+        },
+        //深度监视
+        someDeepWatch: {
+        handler: function (val, oldVal) { /* ... */ },
+        deep: true
+        },
+    },
+    // 计算属性
+    computed:{
+        totally:function(){
+            return this.peopleNum * this.peoplePri
         }
     }
 }
