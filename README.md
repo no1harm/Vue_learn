@@ -173,6 +173,7 @@
     + `npm run dev`可以运行，但是浏览器F12报错`Uncaught ReferenceError: require is not defined`
         - `webpack.config.js`中设置`electron:false`
             + 但是现在把选项删除了又没有影响了，真坑...
+            + 把`target: 'node'`注释掉也可以解决这个问题
 
 - router-link
     + 引入组件

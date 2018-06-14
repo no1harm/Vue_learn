@@ -1,6 +1,6 @@
 <template>
     <div>
-        APP
+        我是APP
     </div>
 </template>
 

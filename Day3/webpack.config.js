@@ -2,14 +2,14 @@
 const webpack = require("webpack");
 const htmlWebpackPlugin = require('html-webpack-plugin') 
 const path = require('path')
-const VueLoaderPlugin = require('vue-loader')
+// const VueLoaderPlugin = require('vue-loader')
 
 module.exports = {
     // context: path.join(__dirname,'src'),  //从对应的文件夹开始,__dirname指的是根目录
     node:{
       fs:"empty"
     },
-    target: 'node',
+    // target: 'node',
     entry: {                      //入口
       main: "./src/main.js",
     },
