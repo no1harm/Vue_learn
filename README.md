@@ -252,7 +252,7 @@
 - 引入
     + `import Axios from 'axios`
 - Vue原型挂载属性
-    + `Vue.prototype.$axios = Axios`
+    + `Vue.prototype.$ajax = Axios`
 
 - `https://www.jianshu.com/p/8e5fb763c3d7`
 
