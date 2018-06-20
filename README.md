@@ -301,3 +301,4 @@
 - `npm init -y`创建`pakage.json`文件并设置
 - 安装项目依赖`npm i mint-ui vue-preview axios vue-router vue moment -S ; npm i webpack html-webpack-plugin css-loader style-loader less less-loader autoprefixer-loader babel-loader babel-core babel-preset-es2015 babel-plugin-transform-runtime url-loader file-loader vue-loader vue-template-compiler -D`
 - 创建`webpack.config.js`并设置
+- 创建路由
