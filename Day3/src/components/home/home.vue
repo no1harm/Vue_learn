@@ -1,8 +1,10 @@
 <template>
     <div>
-        <mt-button type="default">default</mt-button>
-        <mt-button type="primary">primary</mt-button>
-        <mt-button type="danger">danger</mt-button>
+        <mt-swipe :auto="4000">
+            <mt-swipe-item>1</mt-swipe-item>
+            <mt-swipe-item>2</mt-swipe-item>
+            <mt-swipe-item>3</mt-swipe-item>
+        </mt-swipe>
     </div>
 </template>
 
