@@ -1,4 +1,4 @@
-const { VueLoaderPlugin } = require('vue-loader')
+// const { VueLoaderPlugin } = require('vue-loader')
 module.exports = {
     entry: './main.js',
     output: {
@@ -29,9 +29,11 @@ module.exports = {
     // plugins: [
     //   new VueLoaderPlugin()
     // ]
+    // plugins: [ new HtmlWebpackPlugin({ filename: 'index.html', template: './index.html', title: 'hello App' }) ],
     resolve: { 
       alias: { 
-        'vue': 'vue/dist/vue.js' 
-      } 
-    }
+        'vue$': 'vue/dist/vue.common.js' 
+      },
+      extensions: ['*', '.js', '.vue', '.json'] 
+    },
   }

@@ -1,4 +1,5 @@
 # 用Vuex构建一个笔记应用
+#### 根据https://github.com/coligo-io/notes-app-vuejs-vuex模仿
 
 ## 目的：学习Vuex
 
@@ -84,3 +85,11 @@
         }
         ...
         ```
+
+### 构建Vue组件并引入子组件
+
+- `main.js`
+- `app.js`
+    + `toolbar.vue`
+    + `notelist.vue`
+    + `editor.vue`

@@ -1,6 +1,8 @@
 <template>
     <div id="app">
-        I'm ready.
+        <toolbar></toolbar>
+        <!-- <note-list></note-list> -->
+        <editor></editor>
     </div>
 </template>
 

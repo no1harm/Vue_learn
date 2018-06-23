@@ -4,6 +4,9 @@ import App from './components/app.vue'
 
 new Vue({
     store,//注入到所有子组件
-    el:'body',
-    components:{App}
+    el:'#app',
+    // components:{App},
+    render:function(creater){
+        return creater(App)
+     }
 })
