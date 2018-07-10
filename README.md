@@ -308,3 +308,11 @@
 - 挂载
     + `Vue.use(Mint)`
 - 轮播图实现
+
+## Day4
+
+- Vue 动画特效
+
+使用`<transition></transition>`包裹住需要设置样式的结构，再加上样式
+使用`Animate.css`库
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue demo</title>
+    <script src="./vue.js"></script>
+    <link rel="stylesheet" href="./animate.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <transition name="fade" enter-active-class="animated bounce" leave-active-class="animated slideOutRight">
+            <div v-if="show">{{ message }}</div>
+        </transition>
+        <button @click = "change">Click Me</button>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                message:"hello world",
+                show:true,
+            },
+            methods:{
+                change: function() {
+                    this.show = !this.show
+                },
+            }
+        })
+    </script>
+</body>
+</html>
