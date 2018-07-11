@@ -316,3 +316,8 @@
 使用`<transition></transition>`包裹住需要设置样式的结构，再加上样式
 使用`Animate.css`库
 
+- Vue Js动画与Velocity.js
+
+导入`velocity.js`
+
+接下来另开一个repo转入单页面开发流程

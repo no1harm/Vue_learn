@@ -8,13 +8,28 @@
     <script src="./vue.js"></script>
     <link rel="stylesheet" href="./animate.css">
     <style>
-
+        .fade-enter,.fade-leave {
+            opacity: 0;
+        }
+        .fade-enter-active,.fade-leave-active{
+            transition: opacity 3s;
+        }
     </style>
 </head>
 <body>
     <div id="app">
-        <transition name="fade" enter-active-class="animated bounce" leave-active-class="animated slideOutRight">
-            <div v-if="show">{{ message }}</div>
+        <transition 
+        type="transition"
+        name="fade" 
+        @before-enter = "handleBeforeEnter"
+        @enter="handleEnter"
+        @after-enter="handleAfterEnter"
+        appear
+        enter-active-class="animated bounce fade-enter-active" 
+        leave-active-class="animated slideOutRight fade-leave-active"
+        appear-active-class="animated bounce">
+            <div v-if="show" key="Hello">{{ message }}</div>
+            <div v-else key="Hell">{{ message2 }}</div>
         </transition>
         <button @click = "change">Click Me</button>
     </div>
@@ -23,13 +38,25 @@
         var app = new Vue({
             el:'#app',
             data:{
-                message:"hello world",
+                message:"Hello World",
+                message2:"Hell World",
                 show:true,
             },
             methods:{
                 change: function() {
                     this.show = !this.show
                 },
+                handleBeforeEnter:function(el){
+                    el.style.color = "red"
+                },
+                handleEnter:function(el,done){
+                    setTimeout(()=>{
+                        el.style.color = "black"
+                    },2000)
+                },
+                handleAfterEnter:function(el){
+                    el.style.color = "green"
+                }
             }
         })
     </script>
